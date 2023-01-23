@@ -1,0 +1,14 @@
+{
+  "name": "apptest1",
+  "version": "1.0.0",
+  "description": "testing no.1",
+  "main": "indextest1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Om",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  }
+}
