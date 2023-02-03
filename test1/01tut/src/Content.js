@@ -1,6 +1,6 @@
 import React from 'react'
-
-import{FaTrashAlt} from 'react-icons/fa';
+import ItemList from './ItemList'
+// import{FaTrashAlt} from 'react-icons/fa';
 
 const Content = ({items,handleCheck,handleDelete}) => {
       // const [items, setItems] = useState([
@@ -75,31 +75,36 @@ const Content = ({items,handleCheck,handleDelete}) => {
        {/* <button onClick={(e)=> handleClick3(e)}>click it</button>  */}
        {/* <button onClick={handleClick2}>click it</button> */ }
       {items.length ?(
-              <ul>
-                {items.map((item) => (
-                  <li className ='item' key={item.id}>
-                    <input
-                    type='checkbox'
-                    onChange={() => handleCheck(item.id)}
-                    checked ={item.checked}/>
-                    <label
-                    style = {(item.checked) ? {textDecoration:
-                      'line-through'}: null }
-                    onDoubleClick={()=> handleCheck(item.id)}
-                    >{item.item}</label>
-                    <FaTrashAlt 
-                    onClick={()=> handleDelete(item.id)}
-                    role='button' 
-                    tabIndex='0'/>
+          <ItemList 
+          items = {items}
+          handleCheck = {handleCheck}
+          handleDelete = {handleDelete}
+          />
+              // <ul>
+              //   {items.map((item) => (
+              //     <li className ='item' key={item.id}>
+              //       <input
+              //       type='checkbox'
+              //       onChange={() => handleCheck(item.id)}
+              //       checked ={item.checked}/>
+              //       <label
+              //       style = {(item.checked) ? {textDecoration:
+              //         'line-through'}: null }
+              //       onDoubleClick={() => handleCheck(item.id)}
+              //       >{item.item}</label>
+              //       <FaTrashAlt 
+              //       onClick={() => handleDelete(item.id)}
+              //       role="button" 
+              //       tabIndex="0"/>
                     
-                          {/* each list item needs a key in react */}
-                  </li>
+              //             {/* each list item needs a key in react */}
+              //     </li>
                 
-                ))}
+              //   ))}
 
-              </ul>
+              // </ul>
 
-      ):(
+       ):(
         <p style = {{marginTop: '2 rem'}}>Your list is Empty.</p>
       )}
     </main>
