@@ -38,7 +38,7 @@ function App() {
 
         const handleDelete = (id) =>{
           console.log(id);
-          const listItems = items.filter((item)=> item.id !== id);
+          const listItems = items.filter((item) => item.id !== id);
             setItems(listItems);
             localStorage.setItem('shoppinglist',JSON.stringify(listItems));
             
@@ -57,7 +57,7 @@ function App() {
           
          Hello there {handleNameChange()}
         </p> */}
-      <Footer/>  
+      <Footer length = {items.length}/>  
     </div>
   );
 }
